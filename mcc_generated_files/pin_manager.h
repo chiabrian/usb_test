@@ -54,6 +54,370 @@
 /**
     Section: Device Pin Macros
 */
+/**
+  @Summary
+    Sets the GPIO pin, RB0, high using LATB0.
+
+  @Description
+    Sets the GPIO pin, RB0, high using LATB0.
+
+  @Preconditions
+    The RB0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB0 high (1)
+    LED_RED_SetHigh();
+    </code>
+
+*/
+#define LED_RED_SetHigh()          ( LATBSET = (1 << 0) )
+/**
+  @Summary
+    Sets the GPIO pin, RB0, low using LATB0.
+
+  @Description
+    Sets the GPIO pin, RB0, low using LATB0.
+
+  @Preconditions
+    The RB0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB0 low (0)
+    LED_RED_SetLow();
+    </code>
+
+*/
+#define LED_RED_SetLow()           ( LATBCLR = (1 << 0) )
+
+/**
+  @Summary
+    Sets a value to the GPIO pin.
+
+  @Description
+    Sets or Resets the GPIO pin, RB0, low or high using LATB0.
+
+  @Preconditions
+    The RB0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    bool value; : value to be set to the GPIO pin.
+
+  @Example
+    <code>
+    // Set RB0 to low.
+    LED_RED_SetValue(false);
+    </code>
+
+*/
+inline static void LED_RED_SetValue(bool value)
+{
+  if(value)
+  {
+    LED_RED_SetHigh();
+  }
+  else
+  {
+    LED_RED_SetLow();
+  }
+}
+
+/**
+  @Summary
+    Toggles the GPIO pin, RB0, using LATB0.
+
+  @Description
+    Toggles the GPIO pin, RB0, using LATB0.
+
+  @Preconditions
+    The RB0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB0
+    LED_RED_Toggle();
+    </code>
+
+*/
+#define LED_RED_Toggle()           ( LATBINV = (1 << 0) )
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB0.
+
+  @Description
+    Reads the value of the GPIO pin, RB0.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB0
+    postValue = LED_RED_GetValue();
+    </code>
+
+*/
+#define LED_RED_GetValue()         PORTBbits.RB0
+/**
+  @Summary
+    Configures the GPIO pin, RB0, as an input.
+
+  @Description
+    Configures the GPIO pin, RB0, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB0 as an input
+    LED_RED_SetDigitalInput();
+    </code>
+
+*/
+#define LED_RED_SetDigitalInput()   ( TRISBSET = (1 << 0) )
+/**
+  @Summary
+    Configures the GPIO pin, RB0, as an output.
+
+  @Description
+    Configures the GPIO pin, RB0, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB0 as an output
+    LED_RED_SetDigitalOutput();
+    </code>
+
+*/
+#define LED_RED_SetDigitalOutput()   ( TRISBCLR = (1 << 0) )
+/**
+  @Summary
+    Sets the GPIO pin, RB1, high using LATB1.
+
+  @Description
+    Sets the GPIO pin, RB1, high using LATB1.
+
+  @Preconditions
+    The RB1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB1 high (1)
+    LED_GREEN_SetHigh();
+    </code>
+
+*/
+#define LED_GREEN_SetHigh()          ( LATBSET = (1 << 1) )
+/**
+  @Summary
+    Sets the GPIO pin, RB1, low using LATB1.
+
+  @Description
+    Sets the GPIO pin, RB1, low using LATB1.
+
+  @Preconditions
+    The RB1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB1 low (0)
+    LED_GREEN_SetLow();
+    </code>
+
+*/
+#define LED_GREEN_SetLow()           ( LATBCLR = (1 << 1) )
+
+/**
+  @Summary
+    Sets a value to the GPIO pin.
+
+  @Description
+    Sets or Resets the GPIO pin, RB1, low or high using LATB1.
+
+  @Preconditions
+    The RB1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    bool value; : value to be set to the GPIO pin.
+
+  @Example
+    <code>
+    // Set RB1 to low.
+    LED_GREEN_SetValue(false);
+    </code>
+
+*/
+inline static void LED_GREEN_SetValue(bool value)
+{
+  if(value)
+  {
+    LED_GREEN_SetHigh();
+  }
+  else
+  {
+    LED_GREEN_SetLow();
+  }
+}
+
+/**
+  @Summary
+    Toggles the GPIO pin, RB1, using LATB1.
+
+  @Description
+    Toggles the GPIO pin, RB1, using LATB1.
+
+  @Preconditions
+    The RB1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB1
+    LED_GREEN_Toggle();
+    </code>
+
+*/
+#define LED_GREEN_Toggle()           ( LATBINV = (1 << 1) )
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB1.
+
+  @Description
+    Reads the value of the GPIO pin, RB1.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB1
+    postValue = LED_GREEN_GetValue();
+    </code>
+
+*/
+#define LED_GREEN_GetValue()         PORTBbits.RB1
+/**
+  @Summary
+    Configures the GPIO pin, RB1, as an input.
+
+  @Description
+    Configures the GPIO pin, RB1, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB1 as an input
+    LED_GREEN_SetDigitalInput();
+    </code>
+
+*/
+#define LED_GREEN_SetDigitalInput()   ( TRISBSET = (1 << 1) )
+/**
+  @Summary
+    Configures the GPIO pin, RB1, as an output.
+
+  @Description
+    Configures the GPIO pin, RB1, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB1 as an output
+    LED_GREEN_SetDigitalOutput();
+    </code>
+
+*/
+#define LED_GREEN_SetDigitalOutput()   ( TRISBCLR = (1 << 1) )
 
 /**
     Section: Function Prototypes

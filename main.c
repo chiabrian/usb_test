@@ -47,8 +47,6 @@
 */
 #include "mcc_generated_files/system.h"
 
-void MCC_USB_CDC_DemoTasks(void);
-
 /*
                          Main application
  */
@@ -59,7 +57,15 @@ int main(void)
     while (1)
     {
         // Add your application code
-        MCC_USB_CDC_DemoTasks();
+        
+        // 500ms
+        if(IFS0bits.T1IF)
+        {
+            IFS0bits.T1IF = 0;
+            PORTBbits.RB0 ^= 1;
+            PORTBINV = 1;
+        }
+        
     }
     return 1; 
 }

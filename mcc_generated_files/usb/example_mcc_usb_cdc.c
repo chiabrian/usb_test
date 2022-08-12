@@ -31,6 +31,8 @@
 
 #include "usb.h"
 
+#include "../uart2.h"
+
 static uint8_t readBuffer[64];
 static uint8_t writeBuffer[64];
 
@@ -73,6 +75,10 @@ void MCC_USB_CDC_DemoTasks(void)
         if(numBytesRead > 0)
         {
             putUSBUSART(writeBuffer,numBytesRead);
+            for(int j=0;j<numBytesRead;j++)
+            {
+                UART2_Write(writeBuffer[j]);
+            }
         }
     }
 

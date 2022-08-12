@@ -266,9 +266,9 @@ sizeof(sd001),USB_DESCRIPTOR_STRING,
 };
 
 //Product string descriptor
-const struct{uint8_t bLength;uint8_t bDscType;uint16_t string[8];}sd002={
+const struct{uint8_t bLength;uint8_t bDscType;uint16_t string[17];}sd002={
 sizeof(sd002),USB_DESCRIPTOR_STRING,
-{'G','O','O','D','C','O','D','E'}
+{'U','S','B',' ','S','e','r','i','a','l',' ','E','c','h','o','e','r'}
 };
 
 //Serial number string descriptor.  If a serial number string is implemented, 
